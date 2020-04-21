@@ -1,0 +1,42 @@
+{
+    "name": "asciidoctor-server",
+    "description": "An asciidoctor server",
+    "version": "0.0.1",
+    "main": "index.js",
+    "license": "MIT",
+    "author": {
+        "name": "Marcelo Adamatti",
+        "email": "adamatti@gmail.com",
+        "url": "http://adamatti.github.io"
+    },
+    "homepage": "http://github.com/adamatti/asciidoctor-server",
+    "bugs": {
+        "url": "http://github.com/adamatti/asciidoctor-server/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/adamatti/asciidoctor-server.git"
+    },
+    "keywords": [
+        "asciidoctor",
+        "server"
+    ],
+    "bin": {
+        "asciidoctor-server": "./index.js",
+        "as": "./index.js"
+    },
+    "scripts": {
+        "start": "node index.js",
+        "watch": "nodemon index.js"
+    },
+    "dependencies": {
+        "asciidoctor": "^2.1.1",
+        "ejs": "^3.0.2",
+        "express": "^4.17.1",
+        "express-ejs-layouts": "^2.5.0",
+        "string": "^3.3.3"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.3"
+    }
+}

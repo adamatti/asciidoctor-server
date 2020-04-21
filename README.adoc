@@ -1,0 +1,5 @@
+Similar to https://www.npmjs.com/package/markserv[markserv], but for http://asciidoc.org[asciidoc].
+
+#### Commands
+
+* Publish local: `npm link`
