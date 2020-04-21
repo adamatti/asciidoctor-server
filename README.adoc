@@ -3,3 +3,13 @@ Similar to https://www.npmjs.com/package/markserv[markserv], but for http://asci
 #### Commands
 
 * Publish local: `npm link`
+* Publish to NPM: `npm publish`
+* Use:
+    * `npx asciidoctor-server` OR
+    * `npm install -g asciidoctor-server` then `asciidoctor-server` / `as`
+
+#### Future
+
+* Configure port
+* Enable nested folders
+* Evaluate: Disable warnings
