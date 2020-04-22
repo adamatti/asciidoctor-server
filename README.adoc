@@ -10,6 +10,5 @@ Similar to https://www.npmjs.com/package/markserv[markserv], but for http://asci
 
 #### Future
 
-* Configure port
 * Enable nested folders
-* Evaluate: Disable warnings
+* Evaluate: Disable Asciidoc warnings

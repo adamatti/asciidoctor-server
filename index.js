@@ -3,10 +3,11 @@
 const express = require("express"),
       expressLayouts = require('express-ejs-layouts'),
       app = express(),
-      { readdirSync, readFileSync,realpathSync } = require('fs'),
+      { readdirSync, readFileSync,realpathSync,existsSync } = require('fs'),
       S = require('string'),
       asciidoctor = require('asciidoctor')(),
-      path = require("path")
+      path = require("path"),
+      PORT = process.env.PORT || 3000
 ;
 
 const base = path.dirname(realpathSync(__filename))
@@ -24,11 +25,17 @@ app.get("/", (req,res) => {
 
 app.get("/:fileName", (req,res) => {
     const fileName = req.params["fileName"]
-    const content = asciidoctor.convert(readFileSync(fileName))
     
+    if (!existsSync(fileName)){
+        console.log(`File not found [file: ${fileName}]`)
+        res.status(404).send("File not found").end()
+        return
+    }
+
+    const content = asciidoctor.convert(readFileSync(fileName))
     res.render("_content.ejs", {content})
 })
 
-app.listen(3000, () => {
-    console.log("Started")
+app.listen(PORT, () => {
+    console.log(`Started [port: ${PORT}]`)
 })
